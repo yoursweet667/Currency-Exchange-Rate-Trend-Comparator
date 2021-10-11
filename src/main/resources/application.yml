@@ -1,0 +1,9 @@
+giphy:
+  service:
+    url: api.giphy.com
+
+rates:
+  service:
+    url: openexchangerates.org
+
+

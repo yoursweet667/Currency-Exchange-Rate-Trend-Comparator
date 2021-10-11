@@ -1,0 +1,61 @@
+openapi: 3.0.1
+info:
+  title: Currency Exchange Rate Trend API
+  version: 1.0.0
+paths:
+  /trend:
+    get:
+      tags:
+      - Trend
+      operationId: GetCurrencyTrendGif
+      description: Get currency exchange rate trend gif
+      parameters:
+        - in: query
+          name: baseAsset
+          schema:
+            type: string
+          required: true
+          description: Base asset in the format of the ISO 4217 standard
+      responses:
+        200:
+          description: Gif
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Gif'
+        204:
+          description: Trend has not changed
+        400:
+          description: Something went wrong
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      example: { errorMessage: something went wrong }
+      required:
+      - errorMessage
+      properties:
+        errorMessage:
+          type: string
+    Gif:
+      type: object
+      example:
+        {
+          "url": "http://giphy.com/embed/YsTs5ltWtEhnq"
+        }
+      required: 
+      - url
+      properties:
+        url:
+          type: string
+          description: url of gif

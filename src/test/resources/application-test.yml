@@ -1,0 +1,7 @@
+giphy:
+  service:
+    url: http://localhost:9561
+
+rates:
+  service:
+    url: http://localhost:9561
