@@ -1,6 +1,7 @@
 # Currency Exchange Rate Trend API
 
-Currency Exchange Rate Trend API is a service for comparing currency rates and return relevant gif.
+Currency exchange rate trend app provides API to retrieve a GIF animation displaying whether the specified currency grew over last day comparing to RUB.
+(this is just a demo project, it doesn't solve any real problem)
 
 ## Running
 
